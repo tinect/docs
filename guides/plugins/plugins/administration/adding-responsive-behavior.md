@@ -1,10 +1,13 @@
 # Adding responsive behavior
 
+## Overview
 The Shopware 6 Administration provides two ways of adding classes to elements based on their size, the device helper and the `v-responsive` directive.
 Alternatively you can use `sccs` media queries to make your plugin responsive.
-Learn how to use `sccs` here, [Add custom styles](./add-custom-styles.md).
+Learn how to use `scss` here:
 
-## The device helper
+{% page-ref page="./add-custom-styles.md" %}
+
+## DeviceHelper
 
 The DeviceHelper provides methods to get device and browser information like the current viewport size.
 The helper methods can be accessed with "this.$device" in every Vue component,
@@ -23,7 +26,7 @@ const component = 'sw-basic-example';
 this.$device.onResize({ listener, scope, component });
 this.$device.removeResizeListener(component);
 ```
-It also provides many helper functions to get for example the screen dimensions.
+It also provides many helper functions e.g. to get the screen dimensions.
 Although there are many more as seen below:
 
 ```javascript
@@ -45,6 +48,6 @@ The `v-responsive` directive can be used to dynamically apply classes based on a
 <input v-responsive="{ 'is--compact': el => el.width <= 1620, timeout: 200 }">
 ```
 
-Explanation:
-- Apply class (in this case: 'is--compact') when the width of the element is smaller than 1620px.
-- timeout: Sets the duration on how much the throttle should wait.
+Let's do a small explanation of this directive:
+- Apply class (in this case: `is--compact`) when the width of the element is smaller than 1620px.
+- `timeout`: Sets the duration on how much the throttle should wait.
